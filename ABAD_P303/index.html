@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head> 
+            <meta charset="UTF-8">
+            <title> Mykel Zandrex</title>
+            <link rel = "stylesheet" href="style.css">
+        </head>
+<body>
+    <div class = "main">
+        <div class = "navbar">
+            <div class = "icon">
+                <h2 class = "logo">CovidTracer</h2>
+                </div>
+
+    <div class = "menu">
+        
+        <nav>
+        <ul id='MenuItems'>
+            <li><a href="#">HOME</li>
+            <li><a href="#">ABOUT</li>
+            <li><a href="#">SERVICE</li>
+            <li><a href="#">CONTACT</li>
+            <li><button class='loginbtn' onclick="document.getElementById('login-form')
+            .style.display ='block'" style ="width: auto;">ACCOUNT</button> </li>
+        </ul>
+        </nav>
+    </div>
+
+    <div class="search">
+        <input class="srch" type="search" name="" placeholder="Search ot type anything">
+        <a href="#"> <button class="btn">Search</button> </a>
+    </div>
+
+    <div id = 'login-form' class='login-page'>
+        <div class = "form-box">
+            <div class = 'button-box'>
+                <div id = 'btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>ADMIN</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>CLIENT</button>
+            </div>
+            <form id='login' class='input-group-login'>
+                <input type = 'text' class='input-field' placeholder='Enter ID' required>
+                <input type = 'text' class='input-field' placeholder='Enter Password' required>
+                <input type = 'checkbox' class= 'check-box'><span>Remember Password</span>
+                <button type = 'submit'class= 'submit-btn' id="loginbtn" >Log In</button>
+
+            </form>
+
+            <form id = 'register' class= 'input-group-register'>
+                <input type = 'text' class='input-field' placeholder='Full name' required>
+                <input type = 'text' class='input-field' placeholder='Address' required>
+                <input type = 'text' class='input-field' placeholder='Contact Number' required>
+                <input type = 'text' class='input-field' placeholder='Temperature' required>
+                <input type = 'checkbox' class='check-box'><span>I agree to the terms and conditions.</span>
+                <button type = 'submit'class= 'submit-btn'>Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-content">
+            <img src="ping.png.png" alt="Close" class="close">
+            <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>Fullname</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>Temperature °C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active-row">
+                    <td>Yang Jungwon</td>
+                    <td>Seoul, South Korean</td> 
+                    <td>+1 (310) 564-7006</td>
+                    <td>36.5°C</td>
+                  </tr>
+                  <tr class="active-row">
+                    <td>Lee Hee Seung</td>
+                    <td>Namyangju-si, South Korea</td>
+                    <td>+1 (310) 564-7006</td>
+                    <td>38°C</td>
+                  </tr>
+                  <tr class="active-row">
+                    <td>Jay Park</td>
+                    <td>Seattle, Washington, US</td>
+                    <td>+1 (310) 564-7006</td>
+                    <td>36.6°C</td>
+                  </tr>
+                  <tr class="active-row">
+                    <td>Park Sung Hoon</td>
+                    <td>Suwon-si, South Korea</td>
+                    <td>+1 (310) 564-7006</td>
+                    <td>37.9°C</td>
+                  </tr>
+                  <tr class="active-row">
+                    <td>Kim Seon Woo</td>
+                    <td>Suwon-si, South Korea</td>
+                    <td>+1 (310) 564-7006</td>
+                    <td>36.3°C</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+            <script>
+                var x = document.getElementById('login');
+                var y = document.getElementById('register');
+                var z = document.getElementById('btn');
+
+                function register(){
+                    x.style.left='-400px';
+                    y.style.left='50px';
+                    z.style.left='110px';
+                }
+                function login(){
+                    x.style.left='50px';
+                    y.style.left='450px';
+                    z.style.left='0px';
+                }
+            </script>
+            <script>
+                var modal = document.getElementById('login-form');
+                window.onclick = function(event){
+                    if(event.target == modal){
+                        modal.style.display = "none";
+                    }
+                }
+            </script> 
+
+            <script>
+                document.getElementById("loginbtn").addEventListener("click",function(){
+                    document.querySelector(".popup").style.display = "flex";
+                })
+
+                document.querySelector(".close").addEventListener("click",function(){
+                    document.querySelector(".popup").style.display = "none";
+                })
+            </script>
+</body>
+</html>
+
+<!--How it Works:
+1. Kindly go to the ACCOUNT TAB.
+2. You'll be able to see there that there will be a login form selections the Admin and the Client(User).
+3. If you click the Client it will show you a registration from where the user will input a specific information.
+4. If you click the Admin you try to insert any information.
+5. Once you already click the Login button, a table will pop with a sample data.
+6. On the top right of the table there will be a close icon which will close the table.
+7. Thank you!
+-->
